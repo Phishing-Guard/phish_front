@@ -85,11 +85,11 @@ async function analyze() {
         alert("문자 내용을 입력하세요!");
         return;
     }
-
+// 백엔드 주소 추가 예정
     showLoadingUI();
 
     try {
-        const res = await fetch("👉 너의 백엔드 주소 넣을 곳 👈", {
+        const res = await fetch("백엔드", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ spamM: text })
