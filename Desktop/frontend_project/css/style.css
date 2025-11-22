@@ -807,15 +807,16 @@ textarea {
 }
 
 .long-box {
-   flex: flex;
     width: 500px;
     height: 70px;
-    align-items: flex-start;
-    justify-content: flex-start;
+
+    overflow-x: hidden;
+    overflow: auto;
+    
     text-align: left;
     overflow-y: auto;
+    line-height: 1.4;
 
     padding-left: 15px;
-    line-height: 70px;
     border-radius: 10px;
 }

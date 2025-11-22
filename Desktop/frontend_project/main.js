@@ -136,7 +136,7 @@ function showResultUI(data) {
                 </div>
 
                 <div class="fancy-row">
-                    <div class="short-box">감지된<br>위험요소</div>
+                    <div class="short-box">해결<br>방법</div>
                     <div class="long-box">${data.solve.map(item => `<li>${item}</li>`).join("")}</div>
                 </div>
             </div>
