@@ -501,7 +501,7 @@ body {
 /* test page */
 
 .page-test {
-   min-height: 1080px;
+   min-height: 1100px;
 }
 
 .test-box {
@@ -566,12 +566,12 @@ body {
 
 .summary {
    width: 180px;
-   height: 75px;
+   height: 70px;
    border-radius: 50px;
    background-color: #FFFFFF;
 
    border: 2px solid #544B41;
-   margin-top: -2px;
+   margin-top: -1px;
 
    display: flex;
    align-items: center;
@@ -593,7 +593,7 @@ body {
 
 .intitle {
    width: 660px;
-   height: 503px;
+   height: 520px;
    background-color: #DADDDF;
 
    display: flex;
@@ -624,9 +624,8 @@ textarea {
 
 .input-area {
    width: 565px;
-   height: 370px;
+   height: 390px;
    background-color: #FFFFFF;
-   border-radius: 10px;
 
    border: none;
    outline: none;
@@ -656,7 +655,7 @@ textarea {
 
 .outtitle {
    width: 660px;
-   height: 503px;
+   height: 520px;
    background-color: rgba(100, 114, 197, 0.55);
 
    display: flex;
@@ -672,9 +671,8 @@ textarea {
 
 .output-box {
    width: 565px;
-   height: 370px;
+   height: 390px;
    background-color: #FFFFFF;
-   border-radius: 10px;
 
    padding: 20px;
    font-size: 30px;
@@ -696,8 +694,8 @@ textarea {
    align-items: center;
    justify-content: center;
 
-   margin-top: 40px;
-   margin-bottom: 40px;
+   margin-top: 65px;
+   margin-bottom: 30px;
    background-color: #DADDDF;
    border-radius: 15px;
    border: none;
@@ -764,7 +762,7 @@ textarea {
 }
 
 .safe-message {
-   font-size: 34px;
+   font-size: 32px;
    text-align: center;
 }
 
@@ -773,7 +771,7 @@ textarea {
     width: 565px;
     height: 370px;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     margin-bottom: 20px;
     padding: 10px;
     align-items: center;
@@ -791,14 +789,12 @@ textarea {
     gap: 10px;
     background-color: #FFFFFF;
     padding: 10px;
-    border-radius: 10px;
 }
 
 .short-box {
     width: 110px;
     height: 70px;
     background-color: #E7DFC6;
-    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -818,5 +814,4 @@ textarea {
     line-height: 1.4;
 
     padding-left: 15px;
-    border-radius: 10px;
 }
