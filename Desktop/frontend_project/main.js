@@ -85,11 +85,11 @@ function showLoadingUI() {
     outtitle.style.backgroundColor = "rgba(140, 150, 210, 0.65)";
 
     outputBox.innerHTML = `
-        <p style="font-size:34px; margin-bottom:40px;">
-            문자를 분석하는 중입니다
-        </p>
-        <div class="dots">
-            <span></span><span></span><span></span>
+        <div class="loading-wrapper">
+            <p class="loading-text">문자를 분석하는 중입니다</p>
+            <div class="dots">
+                <span></span><span></span><span></span>
+            </div>
         </div>
     `;
 
@@ -99,9 +99,10 @@ function showLoadingUI() {
 
 // ========= 분석 결과 화면 =========
 function showResultUI(data) {
+    // 색상 설정
     if (data.type === "안전") {
-        outtitle.style.backgroundColor = "#7BEA7F";
-        summary.style.backgroundColor = "#7BEA7F";
+        outtitle.style.backgroundColor = "#5FAD6E";
+        summary.style.backgroundColor = "#5FAD6E";
     }
     else if (data.type === "주의") {
         outtitle.style.backgroundColor = "#F9DA8D";
@@ -114,37 +115,35 @@ function showResultUI(data) {
 
     summary.textContent = data.type;
 
+    // 안전 메시지
     if (data.type === "안전") {
         outputBox.innerHTML = `
-            <div style="font-size:26px;">
-                ${data.message}
+            <div class="safe-wrapper">
+                <div class="safe-message">${data.message}</div>
             </div>
         `;
-        btn.textContent = "다시하기";
-        return;
+    } 
+    // 주의/피싱 메시지
+    else {
+        outputBox.innerHTML = `
+            <div class="fancy-container">
+
+                <div class="fancy-row">${data.message}</div>
+
+                <div class="fancy-row">
+                    <div class="short-box">감지된<br>위험요소</div>
+                    <div class="long-box">${data.danger.map(item => `<li>${item}</li>`).join("")}</div>
+                </div>
+
+                <div class="fancy-row">
+                    <div class="short-box">감지된<br>위험요소</div>
+                    <div class="long-box">${data.solve.map(item => `<li>${item}</li>`).join("")}</div>
+                </div>
+            </div>
+        `;
     }
 
-    
-    outputBox.innerHTML = `
-        <div style="font-size:26px; margin-bottom:10px;">
-            ${data.message}
-        </div>
-
-        <div class="result-section">
-            <strong style="font-size:20px;">감지된 위험 요소</strong>
-            <ul style="margin-top:10px;">
-                ${data.danger.map(item => `<li>${item}</li>`).join("")}
-            </ul>
-        </div>
-
-        <div class="result-section">
-            <strong style="font-size:20px;">해결 방법</strong>
-            <ul style="margin-top:10px;">
-                ${data.solve.map(item => `<li>${item}</li>`).join("")}
-            </ul>
-        </div>
-    `;
-
+    // 모든 경우에 버튼 텍스트 변경
     btn.textContent = "다시하기";
 }
 
@@ -166,8 +165,7 @@ async function analyze() {
         const res = await fetch("https://odontophorous-nicky-uncavilling.ngrok-free.dev/api/classify/", {
             method: "POST",
             headers: { 
-                "Content-Type": "application/json",
-                "ngrok-skip-browser-warning": "true"  
+                "Content-Type": "application/json",  
             },
             body: JSON.stringify({ text: text })
         });
