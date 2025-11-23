@@ -162,7 +162,7 @@ async function analyze() {
     showLoadingUI();
 
     try {
-        const res = await fetch("https://odontophorous-nicky-uncavilling.ngrok-free.dev/api/classify/", {
+        const res = await fetch("https://web-production-d0690.up.railway.app/api/classify/", {
             method: "POST",
             headers: { 
                 "Content-Type": "application/json",  
